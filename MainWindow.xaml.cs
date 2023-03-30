@@ -61,10 +61,10 @@ namespace CalcApp {
                     result = num1 / num2;
                     break;
                 case "Min":
-                    result = GetMin(num1, num2);
+                    result = Math.Min(num1, num2);
                     break;
                 case "Max":
-                    result = GetMax(num1, num2); 
+                    result = Math.Max(num1, num2); 
                     break;
                 case "Avg":
                     result = GetAvg(num1, num2);
@@ -74,24 +74,6 @@ namespace CalcApp {
             txtValue.Text = result.ToString();
             op = "";
             num1 = result;
-        }
-
-        private int GetMax(int a, int b) {
-            int max;
-            if (a > b)
-                max = a;
-            else
-                max = b;
-            return max;
-        }
-
-        private int GetMin(int a, int b) {
-            int min;
-            if (a < b)
-                min = a;
-            else
-                min = b;
-            return min;
         }
 
         private int GetAvg(int a, int b) {
