@@ -67,17 +67,13 @@ namespace CalcApp {
                     result = Math.Max(num1, num2); 
                     break;
                 case "Avg":
-                    result = GetAvg(num1, num2);
+                    result = (num1 + num1) / 2;
                     break;
             }
 
             txtValue.Text = result.ToString();
             op = "";
             num1 = result;
-        }
-
-        private int GetAvg(int a, int b) {
-            return (a + b) / 2;
         }
 
     }
