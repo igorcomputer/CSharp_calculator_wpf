@@ -69,6 +69,9 @@ namespace CalcApp {
                 case "Avg":
                     result = (num1 + num1) / 2;
                     break;
+                case "x^y":
+                    result = Pow(num1, num2);
+                    break;
             }
 
             txtValue.Text = result.ToString();
@@ -76,5 +79,10 @@ namespace CalcApp {
             num1 = result;
         }
 
+        private int Pow(int x, int y) {
+            if (y == 0)
+                return 1;
+            return Pow(x, y - 1) * x;
+        }
     }
 }
