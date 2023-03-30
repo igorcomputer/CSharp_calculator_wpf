@@ -40,32 +40,9 @@ namespace CalcApp {
             }
         }
 
-        private void btn_plus_Click(object sender, RoutedEventArgs e) {
-            op = "+";
-        }
-
-        private void btn_minus_Click(object sender, RoutedEventArgs e) {
-            op = "-";
-        }
-
-        private void btn_mult_Click(object sender, RoutedEventArgs e) {
-            op = "*";
-        }
-
-        private void btn_div_Click(object sender, RoutedEventArgs e) {
-            op = "/";
-        }
-
-        private void btn_min_Click(object sender, RoutedEventArgs e) {
-            op = "min";
-        }
-
-        private void btn_max_Click(object sender, RoutedEventArgs e) {
-            op = "max";
-        }
-
-        private void btn_avg_Click(object sender, RoutedEventArgs e) {
-            op = "avg";
+        private void btn_op_Click(object sender, RoutedEventArgs e) {
+            Button button = (Button)sender;
+            op = button.Content.ToString();
         }
 
         private void btn_eq_Click(object sender, RoutedEventArgs e) {
@@ -83,13 +60,13 @@ namespace CalcApp {
                 case "/":
                     result = num1 / num2;
                     break;
-                case "min":
+                case "Min":
                     result = GetMin(num1, num2);
                     break;
-                case "max":
+                case "Max":
                     result = GetMax(num1, num2); 
                     break;
-                case "avg":
+                case "Avg":
                     result = GetAvg(num1, num2);
                     break;
             }
