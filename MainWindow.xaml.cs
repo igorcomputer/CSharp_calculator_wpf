@@ -19,9 +19,10 @@ namespace CalcApp {
     /// </summary>
     public partial class MainWindow : Window {
 
-        int num1 = 0;
-        int num2 = 0;
+        double num1 = 0;
+        double num2 = 0;
         string op = "";
+
         public MainWindow() {
             InitializeComponent();
         }
@@ -46,7 +47,7 @@ namespace CalcApp {
         }
 
         private void btn_eq_Click(object sender, RoutedEventArgs e) {
-            int result = 0;
+            double result = 0;
             switch (op) {
                 case "+":
                     result = num1 + num2;
@@ -70,16 +71,17 @@ namespace CalcApp {
                     result = (num1 + num1) / 2;
                     break;
                 case "x^y":
-                    result = Pow(num1, num2);
+                    result = Pow(num1, (int)num2);
                     break;
             }
 
             txtValue.Text = result.ToString();
             op = "";
             num1 = result;
+            num2 = 0;
         }
 
-        private int Pow(int x, int y) {
+        private double Pow(double x, int y) {
             if (y == 0)
                 return 1;
             return Pow(x, y - 1) * x;
